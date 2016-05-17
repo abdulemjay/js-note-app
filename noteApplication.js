@@ -1,22 +1,54 @@
-function NoteApplication(){
+function NotesApplication(){
+	this.author=author;
+	this.notes=[];
+
+
+
+this.create = function(note_content){
+	if (note_content.length>0){
+		this.notes.push(note_content);
+	} else {
+		console.log("Your note is empty");
+	}
 	
 }
 
 
-var newPerson = new NoteApplication(author);
-	newPerson.author=author;
-	newPerson.notes=[];
-
-this.create = function(note_content){
-	this.notes.push(note_content);
-}
-
-
 this.listNotes = function(){
-	listOfNotes = []
-	for (var i=0; i < this.notes.length; i++)
-		listNotes.push(this.notes[i]);
-	return listNotes
+	if (this.notes.length>0){
+		for (var i=0; i < this.notes.length; i++)
+			console.log("Note ID: " + i + "\n" + note_content + "\n\n" + "By Author " + this.author);
+	}	else {
+		console.log("The note is empty for now!");
+	}
 }
 
 
+this.getNote = function(note_id){
+	return "Note ID: " + this.notes[note_id] + "\n\n" + note_content + "\n\n" + "By Author " + this.author;
+}
+
+
+this.search = function(search_text){
+	if (this.notes.includes(search_text)){
+		return "Note ID: " + this.note_id + "\n" + note_content + "\n\n" + "By Author " + this.author;
+	} else {
+		return "search text not found"
+	}
+}
+
+
+this.delete = function(note_id){
+	delete this.notes[note_id]
+}
+
+
+this.edit = function(note_id, new_content){
+	this.notes[note_id] = new_content;
+}
+
+
+
+
+
+}
