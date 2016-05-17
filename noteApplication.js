@@ -8,7 +8,7 @@ function NotesApplication(author){
 	this.create = function(note_content){
 		if (note_content.length > 0){
 			this.notes.push(note_content);
-			console.log("Your new note has been added!"
+			console.log("Your new note has been added!")
 		} else {
 			console.log("Your note is empty");
 		}
@@ -28,9 +28,9 @@ function NotesApplication(author){
 
 	this.getNote = function(note_id){
 		if (note_id > -1 && note_id < this.notes.length){
-			console.log("Note ID: " + [note_id] + "\n" + this.notes[note_id] + "\n\nBy Author: " + this.author);
+			return "Note ID: " + [note_id] + "\n" + this.notes[note_id] + "\n\nBy Author: " + this.author;
 		} else {
-			console.log("This note ID does not exist");
+			return "This note ID does not exist";
 		}
 	}
 
@@ -41,14 +41,14 @@ function NotesApplication(author){
 		if (search_text.length > 0){
 			for (var i=0; i < this.notes.length; i++){
 				if (this.notes[i].includes(search_text)){
-					console.log("Note ID: " + i + "\n" + this.notes[i] + "\n\nBy Author: " + this.author + "\n" + line);
+					 return "Note ID: " + i + "\n" + this.notes[i] + "\n\nBy Author: " + this.author + "\n" + line;
 				} else {
 					textNotFound=true;
 				}
 			}
 		}
 		if (textNotFound){
-			console.log("Sorry, Search term not found!");
+			return "Sorry, Search term not found!";
 		}
 	}
 
