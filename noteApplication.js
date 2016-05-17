@@ -3,7 +3,7 @@ function NotesApplication(author){
 	this.notes=[];
 
 
-
+	line="-------***************-----------"
 	this.create = function(note_content){
 		if (note_content.length>0){
 			this.notes.push(note_content);
@@ -17,7 +17,7 @@ function NotesApplication(author){
 	this.listNotes = function(){
 		if (this.notes.length>0){
 			for (var i=0; i < this.notes.length; i++)
-				console.log("Note ID: " + i + "\n" + note_content + "\n\nBy Author: " + this.author);
+				console.log("Note ID: " + i + "\n" + this.notes[i] + "\n\nBy Author: " + this.author + "\n" + line);
 		}	else {
 			console.log("The note is empty for now!");
 		}
@@ -25,15 +25,22 @@ function NotesApplication(author){
 
 
 	this.getNote = function(note_id){
-		return "Note ID: " + this.notes[note_id] + "\n\n" + note_content + "\n\nBy Author: " + this.author;
+		console.log("Note ID: " + [note_id] + "\n" + this.notes[note_id] + "\n\nBy Author: " + this.author);
 	}
 
 
 	this.search = function(search_text){
-		if (this.notes.includes(search_text)){
-			return "Note ID: " + this.note_id + "\n" + note_content + "\n\nBy Author: " + this.author;
-		} else {
-			return "search text not found"
+		textNotFound=false;
+		console.log("Displaying Search results: \n")
+		for (var i=0; i < this.notes.length; i++){
+			if (this.notes[i].includes(search_text)){
+				console.log("Note ID: " + i + "\n" + this.notes[i] + "\n\nBy Author: " + this.author + "\n" + line);
+			} else {
+				textNotFound=true;
+			}
+		}
+		if (textNotFound){
+			console.log("You cant search an empty for");
 		}
 	}
 
@@ -46,7 +53,8 @@ function NotesApplication(author){
 	this.edit = function(note_id, new_content){
 		this.notes[note_id] = new_content;
 	}
+
+
+	
 }
 
-myNote = new NotesApplication("Emjay");
-myNote.create("Hello World");
