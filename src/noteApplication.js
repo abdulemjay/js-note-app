@@ -1,9 +1,10 @@
 function NotesApplication(author){
 	this.author=author;
 	this.notes=[];
-	line="-------***************-----------"
+	line="-------***************-----------" //to beautify the output
 
-	//validate NoteApplication object properties
+
+	// validate NoteApplication object properties
 	NotesApplication.prototype.validate = {
 		isNote: function (arg) {
 			return (arg.length > 0) && (typeof arg === "string");
@@ -19,7 +20,7 @@ function NotesApplication(author){
 	}; 
 
 
-	//validate note application return status
+	// validate note application return status
 	NotesApplication.prototype.status = {
 		withValue: function(note, i) {
 			return line + "\nNote ID: " + i + "\n" + note + "\n\nBy Author: " + this.author + "\n";
@@ -42,9 +43,10 @@ function NotesApplication(author){
 		}
 	}
 	
-	//print the results using console.log
+
+	// print the results using console.log
 	NotesApplication.prototype.print = function(arr) {
-		var result = "A very good heading\n" + arr.reduce(function(a, b) {
+		var result = "Displaying the results: \n" + arr.reduce(function(a, b) {
 			return a + b;
 		});
 		console.log(result);
@@ -53,17 +55,19 @@ function NotesApplication(author){
 	
 
 
-	//method to create note
+	// refactored method to create note
 	NotesApplication.prototype.create = function(note_content){
 		return (this.validate.isNote(note_content) && this.notes.push(note_content) && this.status.added()) || this.status.invalidNote();		
 	}
 
-	//method to list notes
+
+	// refactored method to list notes
 	NotesApplication.prototype.listNotes = function(){
 		return (this.validate.isList(this.notes) && this.print(this.notes.map(this.status.withValue.bind(this)))) || this.status.empty();
 	}
 	
-	//method to get note
+
+	// refactored method to get note
 	NotesApplication.prototype.getNote = function(note_id){
 		return (this.validate.isNoteId(note_id, this.notes) && this.print([this.notes[note_id]].map(this.status.withValue.bind(this))))
 		|| this.status.invalidNoteId();
@@ -71,7 +75,7 @@ function NotesApplication(author){
 	}
 
 
-	//method to search note
+	// method to search note
 	NotesApplication.prototype.search = function(search_text){
 		textFound=false;
 		console.log("Displaying Search results: \n")
@@ -91,8 +95,7 @@ function NotesApplication(author){
 	}
 
 
-
-	//method to delete note
+	// method to delete note
 	NotesApplication.prototype.deleteNote = function(note_id){
 		if ((note_id > -1) && (note_id < this.notes.length)){
 			this.notes.splice(note_id, 1);
@@ -105,7 +108,7 @@ function NotesApplication(author){
 	}
 
 
-	//method to edit note
+	// method to edit note
 	NotesApplication.prototype.edit = function(note_id, new_content){
 		if (typeof note_id === "number"){
 			if (typeof new_content === "string"){

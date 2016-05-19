@@ -1,5 +1,6 @@
-var newNote = new NotesApplication("Emjay");
+var newNote = new NotesApplication("Emjay");        //create an object from the NotesApplication class
 
+//To test for Notes application create method
 describe("Note Application create Method", function() {
     it("should check if the create method is a property of notes Application", function(){
     	expect(NotesApplication.prototype.hasOwnProperty('create')).toBe(true);
@@ -22,6 +23,7 @@ describe("Note Application create Method", function() {
 });
 
 
+//To test for Notes application listNote method
 describe("Note Application listNotes Method", function() {
     it("should check if the listNotes method is a property of notes Application", function(){
     	expect(NotesApplication.prototype.hasOwnProperty('listNotes')).toBe(true);
@@ -41,6 +43,7 @@ describe("Note Application listNotes Method", function() {
 });
 
 
+//To test for Notes application getNote method
 describe("Note Application getNote Method", function() {
 	it("should check if the getNote method is a property of notes Application", function(){
     	expect(NotesApplication.prototype.hasOwnProperty('getNote')).toBe(true);
@@ -63,6 +66,7 @@ describe("Note Application getNote Method", function() {
 });
 
 
+//To test for Notes application search method
 describe("Note Application search Method", function() {
 	it("should check if the search method is a property of notes Application", function(){
     	expect(NotesApplication.prototype.hasOwnProperty('search')).toBe(true);
@@ -86,6 +90,7 @@ describe("Note Application search Method", function() {
 });
 
 
+//To test for Notes application deleteNote method
 describe("Note Application deleteNote Method", function() {
 	it("should check if the delete method is a property of notes Application", function(){
     	expect(NotesApplication.prototype.hasOwnProperty('deleteNote')).toBe(true);
@@ -106,6 +111,7 @@ describe("Note Application deleteNote Method", function() {
 });
 
 
+//To test for Notes application edit method
 describe("Note Application edit Method", function() {
 	it("should check if the edit method is a property of notes Application", function(){
     	expect(NotesApplication.prototype.hasOwnProperty('edit')).toBe(true);
