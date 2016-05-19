@@ -18,5 +18,10 @@
 <p><strong><span style="text-decoration: underline;">Instructions:</span></strong></p>
 check back soonest!!!
 <p>&nbsp;</p>
+
+<p><strong><span style="text-decoration: underline;">Credits:</span></strong></p>
+Andela Bootcamp Trainers
+<p>&nbsp;</p>
+
 <p align="center"><strong>Thank You!!!</strong></p>
 <p align="center">Developer: <strong>Jamiu Abdulmujeeb(Emjay)</strong></p>
